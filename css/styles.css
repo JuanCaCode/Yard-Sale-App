@@ -1,0 +1,135 @@
+:root{
+    --white:#FFF;
+    --black:#000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #f7f7f7;
+    --hospital-purple:#B983FF;
+    --hospital-hover-purple:#9463d4;
+    --hospital-active-purple:#7f4dc0;
+    --sm:14px;
+    --md:16px;
+    --lg:18px;
+}      
+body{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+.active{
+    display: block !important;
+}
+nav,.navbar-left,.navbar-right{
+    display: flex;
+}
+nav{
+    justify-content: space-between;
+    height: 60px;
+    padding: 0px 24px;
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.menu-mobile-img{
+    display: none;
+    width: 24px;
+}
+.logo{
+    width: 100px;
+}
+.navbar-left ul, .navbar-right ul{
+    list-style: none;
+    padding: 0;
+    margin:0px;
+    display: flex;
+    align-items: center;
+}
+.navbar-left ul{
+    margin-left: 24px;
+}
+.navbar-left ul li a, .navbar-right ul li a{
+    text-decoration: none;
+    color: var(--very-light-pink);
+    border:1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+
+}
+.navbar-left ul li a:hover, .navbar-right ul li a:hover{
+    color: var(--hospital-purple);
+    border:1px solid var(--hospital-purple);
+
+}
+/* aquí aplico estilo al email del navbar */
+.navbar-right ul li:nth-child(1){
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    margin-right: 24px;
+}
+.navbar-icon-cart{
+    position: relative;
+}
+.navbar-right span{
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    width: 16px;
+    height: 16px;
+    font-size: var(--sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hospital-purple);
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: bold;
+}
+#emailLink{
+    cursor: pointer;
+    user-select: none;
+}
+/* ESTILOS DE MENU DESKTOP */
+.desktop-menu{
+    position: absolute;
+    top: 60px;
+    right: 70px;
+    width: 100px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius:6px;
+    background-color: var(--white);
+    padding:20px;
+    z-index: 2;
+    display: none;
+}
+.menu_list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu_list li{
+    text-align: end;
+}
+.menu_list li a{
+    color: var(--black);
+    display: inline-block;
+    text-decoration: none;
+    
+}
+.menu_list li:not(:last-child){
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.menu_list li:last-child{
+    padding-top: 20px;
+    border-top: 1px solid var(--very-light-pink);
+}
+.menu_list li:last-child a{
+    color: var(--hospital-purple);
+    font-size: var(--sm);
+}
+
+@media (max-width:770px){
+    .menu-mobile-img{
+        display: block;
+    }
+    .navbar-left,.navbar-right ul li:nth-child(1){
+        display: none;
+    }
+}
