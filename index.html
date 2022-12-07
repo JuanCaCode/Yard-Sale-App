@@ -110,21 +110,28 @@
     <!-- section main de productos -->
     <section class="main-container">
         <div class="cards-container">
-            <!-- Card modelo -->
-            <article class="product-card">
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theverge.com%2F21250695%2Fbest-laptops&psig=AOvVaw2X291bu3IGTRqkE7pr_J0l&ust=1670421223073000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDOrI-S5fsCFQAAAAAdAAAAABAE" alt="product1">
-                <div class="product-card-info">
-                    <div class="details-container">
-                        <p>$120,00</p>
-                        <p>Headphones</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/bt_add_to_cart.svg" alt="botón de añadir a carrito de compras">
-                    </figure>
-                </div>
-            </article>
+            <!-- Aqui viene el mapeo de los productos -->
       </div>
     </section>
+    <!-- DETALLE DE PRODUCTO -->
+    <aside class="product-detail">
+        <div class="product-detail-close" onclick="toggleProductDetail('cerrar')">
+            <img src="./assets/icons/icon_close.png" alt="icon close">
+        </div>
+        <img class="img-detail-principal" src="https://i.imgur.com/uYKmdB1.png" alt="imagen de producto" >
+        <div class="product-info">
+            <p>$35,00</p>
+            <p>Headphones</p>
+            <p>
+                The new AirPods combine intelligent design with breakthrough technology and crystal-clear sound. Powered by the new Apple H1 headphone chip, AirPods now feature hands-free access to Siri using just your voice. And up to 3 hours of talk time on a single charge.¹
+            </p>
+            <button class="primary_btn">
+                <img src="./assets/icons/bt_add_to_cart.svg" alt="icono carro de compras">
+                <span>Add to cart</span>
+            </button>
+        </div>
+    </aside>
+
 
 
     <script src="./js/main.js"></script>

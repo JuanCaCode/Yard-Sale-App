@@ -11,9 +11,14 @@ let navMobileMenu = document.querySelector(".mobile-menu")
 let navShoppingCartToggle = document.querySelector(".navbar-icon-cart")
 let navShoppingCartContainer = document.querySelector(".cart-container")
 
-// Variables de productos
-const productList=[];
+// variables de aside de product detail
+let closeProductDetailArrow = document.querySelector(".product-detail-close")
+let productDetailContainer = document.querySelector(".product-detail")
 
+// Variables de productos
+let productList=[];
+let cardsContainer = document.querySelector('.cards-container')
+// let cardsContainer = document.querySelector('.cards-container')
 //________________________________________________________________
 
 // Invocación de eventos
@@ -39,6 +44,15 @@ function toggleShoppingCart(){
         navShoppingCartContainer.classList.add('active')
     }
 }
+function toggleProductDetail(action){
+    // active es la clase que tiene estilo display:flex en styles.css
+    console.log('entra')
+    if(action == 'cerrar'){
+        productDetailContainer.classList.remove('active')
+    }else if(action =='abrir'){
+        productDetailContainer.classList.add('active')
+    }
+}
 
 // ARRAY DE LISTA DE PRODUCTOS 
 productList = [
@@ -53,26 +67,45 @@ productList = [
     price:220,image:"https://i.imgur.com/qVAK5Xk.jpg"},
     {name:'Paramore six greatest albums',
     descripcion:'The best album credited to Paramore is After Laughter which is ranked number 1,976 in the overall greatest album chart with a total rank score of 841',
-    price:220,image:"https://i.imgur.com/fWjHNGP.jpg"},
+    price:480,image:"https://i.imgur.com/fWjHNGP.jpg"},
     {name:'Weid Plantpot',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
-    price:220,image:"https://i.imgur.com/y3uLpnY.jpg"},
+    price:120,image:"https://i.imgur.com/y3uLpnY.jpg"},
     {name:'Dead Flies Jar',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
-    price:220,image:"https://i.imgur.com/8ECpeHr.jpg"},
-    {name:'Weid Plantpot',
-    descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
-    price:220,image:"https://i.imgur.com/y3uLpnY.jpg"},
+    price:80,image:"https://i.imgur.com/8ECpeHr.jpg"},
     {name:'Metallica Album CD',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
-    price:220,image:"https://i.imgur.com/WLzahaL.jpg"},
+    price:460,image:"https://i.imgur.com/WLzahaL.jpg"},
     {name:'Blue Thermo',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
-    price:220,image:"https://i.imgur.com/vLbc7S6.jpg"},
+    price:250,image:"https://i.imgur.com/vLbc7S6.jpg"},
     {name:'Deer head decoration',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
-    price:220,image:"https://i.imgur.com/HtdMOhl.jpg"},
+    price:210,image:"https://i.imgur.com/HtdMOhl.jpg"},
     {name:'AC/DC 3 greatest albums',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
-    price:220,image:"https://i.imgur.com/Ik7VU1t.jpg"},
+    price:450,image:"https://i.imgur.com/Ik7VU1t.jpg"},
 ]
+
+function pintarProductosDisponibles(arrayProducts){
+    let componenteHtml;
+    for(product of arrayProducts){
+        componenteHtml = `
+        <article class="product-card">
+            <img src="${product.image}" alt="${product.name}" onclick="product-detail('abrir')">
+            <div class="product-card-info">
+                <div class="details-container">
+                    <p>$${product.price}</p>
+                    <p>${product.name}</p>
+                </div>
+                <figure>
+                    <img src="./assets/icons/bt_add_to_cart.svg" alt="botón de añadir a carrito de compras">
+                </figure>
+            </div>
+        </article>
+        `
+        cardsContainer.innerHTML += componenteHtml
+    }
+}
+pintarProductosDisponibles(productList)
