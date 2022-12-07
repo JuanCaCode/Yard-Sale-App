@@ -33,7 +33,7 @@ function toggleNavMobileMenu(){
     navMobileMenu.classList.toggle('active')
     // si shopping cart block, mantenerlo en block
     if(navShoppingCartContainer.classList.contains('active')){
-        navShoppingCartContainer.classList.add('active')
+        navShoppingCartContainer.classList.remove('active')
     }
 }
 function toggleShoppingCart(){
@@ -44,16 +44,30 @@ function toggleShoppingCart(){
         navShoppingCartContainer.classList.add('active')
     }
 }
-function toggleProductDetail(action){
-    // active es la clase que tiene estilo display:flex en styles.css
-    console.log('entra')
+function toggleProductDetail(action,id){
     if(action == 'cerrar'){
         productDetailContainer.classList.remove('active')
     }else if(action =='abrir'){
         productDetailContainer.classList.add('active')
+        let product = productList.find((producto)=> producto.id == id? producto:null)
+        let plantilla = `
+        <div class="product-detail-close" onclick="toggleProductDetail('cerrar')">
+            <img src="./assets/icons/icon_close.png" alt="icon close">
+        </div>
+        <img class="img-detail-principal" src="${product.image}" alt="${product.name}" >
+        <div class="product-info">
+            <p>$${product.price}</p>
+            <p>${product.name}</p>
+            <p>${product.descripcion}</p>
+            <button class="primary_btn">
+                <img src="./assets/icons/bt_add_to_cart.svg" alt="icono carro de compras">
+                <span>Add to cart</span>
+            </button>
+        </div>
+        `
+        productDetailContainer.innerHTML = plantilla;
     }
 }
-
 // ARRAY DE LISTA DE PRODUCTOS 
 productList = [
     {id:1,name:'Headphones Bluetooth',
@@ -87,7 +101,6 @@ productList = [
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
     price:450,image:"https://i.imgur.com/Ik7VU1t.jpg"},
 ]
-
 function pintarProductosDisponibles(arrayProducts){
     let componenteHtml;
     for(product of arrayProducts){
