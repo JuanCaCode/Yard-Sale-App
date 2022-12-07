@@ -56,34 +56,34 @@ function toggleProductDetail(action){
 
 // ARRAY DE LISTA DE PRODUCTOS 
 productList = [
-    {name:'Headphones Bluetooth',
+    {id:1,name:'Headphones Bluetooth',
     descripcion:"En la calle, en el colectivo o en la oficina, ten siempre a mano tus audífonos Genius y ¡escápate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts favoritos cuando quieras y donde quieras.",
     price:10,image:"https://i.imgur.com/uYKmdB1.png"},
-    {name:'Laptop Intel Core i7',
+    {id:2,name:'Laptop Intel Core i7',
     descripcion:'Laptop HP 240 G7 gris 14", Intel Celeron N4020 8GB de RAM 1TB HDD, Intel UHD Graphics 600 1366x768px Windows 10 Home',
     price:550,image:"https://i.imgur.com/iJvn7UU.jpg"},
-    {name:'Green Day Original CD',
+    {id:3,name:'Green Day Original CD',
     descripcion:"American Idiot is the seventh studio album by American rock band Green Day, released on September 21, 2004, by Reprise Records.",
     price:220,image:"https://i.imgur.com/qVAK5Xk.jpg"},
-    {name:'Paramore six greatest albums',
+    {id:4,name:'Paramore six greatest albums',
     descripcion:'The best album credited to Paramore is After Laughter which is ranked number 1,976 in the overall greatest album chart with a total rank score of 841',
     price:480,image:"https://i.imgur.com/fWjHNGP.jpg"},
-    {name:'Weid Plantpot',
+    {id:5,name:'Weid Plantpot',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
     price:120,image:"https://i.imgur.com/y3uLpnY.jpg"},
-    {name:'Dead Flies Jar',
+    {id:6,name:'Dead Flies Jar',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
     price:80,image:"https://i.imgur.com/8ECpeHr.jpg"},
-    {name:'Metallica Album CD',
+    {id:7,name:'Metallica Album CD',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
     price:460,image:"https://i.imgur.com/WLzahaL.jpg"},
-    {name:'Blue Thermo',
+    {id:8,name:'Blue Thermo',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
     price:250,image:"https://i.imgur.com/vLbc7S6.jpg"},
-    {name:'Deer head decoration',
+    {id:9,name:'Deer head decoration',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
     price:210,image:"https://i.imgur.com/HtdMOhl.jpg"},
-    {name:'AC/DC 3 greatest albums',
+    {id:10,name:'AC/DC 3 greatest albums',
     descripcion:"Raised Garden Bed - Vertical Garden - Garden Planter - Herb Garden - Strawberry Planter - Planters",
     price:450,image:"https://i.imgur.com/Ik7VU1t.jpg"},
 ]
@@ -93,7 +93,7 @@ function pintarProductosDisponibles(arrayProducts){
     for(product of arrayProducts){
         componenteHtml = `
         <article class="product-card">
-            <img src="${product.image}" alt="${product.name}" onclick="product-detail('abrir')">
+            <img src="${product.image}" alt="${product.name}" onclick="toggleProductDetail('abrir',${product.id})">
             <div class="product-card-info">
                 <div class="details-container">
                     <p>$${product.price}</p>
