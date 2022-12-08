@@ -1,4 +1,4 @@
-//________________________________________________________________
+//______________________VARIABLES_________________________________
 // variables para menu de email en navbar
 let navEmailLink = document.querySelector("#emailLink")
 let navEmailMenu = document.querySelector(".desktop-menu")
@@ -18,7 +18,6 @@ let productDetailContainer = document.querySelector(".product-detail")
 // Variables de productos
 let productList=[];
 let cardsContainer = document.querySelector('.cards-container')
-// let cardsContainer = document.querySelector('.cards-container')
 //________________________________________________________________
 
 // Invocación de eventos
