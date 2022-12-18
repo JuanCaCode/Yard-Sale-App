@@ -1,0 +1,20 @@
+{
+  "name": "yard-sale-app",
+  "version": "1.0.0",
+  "description": "Yard Sale Store project build with react, also I apply my knowledge of html, css, javascript, webpack and npm for this project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanCCampo95/Yard-Sale-App.git"
+  },
+  "keywords": ["reactjs","javascript","html","css","webpack","store","ecommerce"],
+  "author": "Juan Camilo Campo <juanccampo95@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanCCampo95/Yard-Sale-App/issues"
+  },
+  "homepage": "https://github.com/JuanCCampo95/Yard-Sale-App#readme"
+}
