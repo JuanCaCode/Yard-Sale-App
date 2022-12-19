@@ -1,0 +1,51 @@
+@import '../vars';
+.mobile-menu{
+    width: 100%;
+    height: auto;
+    border-radius:6px;
+    padding:24px;
+    box-sizing: border-box;
+}
+.mobile-menu>ul{
+    border-bottom: 1px solid $very-light-pink;
+}
+.menu_list_mobile{
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0 0;
+}
+.menu_list_mobile li{
+    text-align: start;
+}
+.menu_list_mobile li a{
+    color: $black;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+.menu_list_mobile li, .last_i_menu li:not(:last-child){
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+.last_i_menu li:last-child a{
+    color: $hospital-purple;
+    font-size: $sm;
+}
+.last_i_menu li:first-child a{
+    color: $black;
+    font-size: $sm;
+    font-weight:300;
+}
+@media (max-width:640px){
+    .mobile-menu{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-menu div{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+    }
+}

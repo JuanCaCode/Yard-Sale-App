@@ -1,0 +1,90 @@
+@import '../vars';
+nav,
+.navbar-left,
+.navbar-right {
+    display: flex;
+}
+
+nav {
+    justify-content: space-between;
+    height: 60px;
+    padding: 0px 24px;
+    border-bottom: 1px solid $very-light-pink;
+}
+
+.menu-mobile-img {
+    display: none;
+    width: 24px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left ul {
+    margin-left: 24px;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a {
+    text-decoration: none;
+    color: $very-light-pink;
+    border: 1px solid $white;
+    padding: 8px;
+    border-radius: 8px;
+
+}
+
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+    color: $hospital-purple;
+    border: 1px solid $hospital-purple;
+
+}
+
+/* aquí aplico estilo al email del navbar */
+.navbar-right ul li:nth-child(1) {
+    color: $very-light-pink;
+    font-size: $sm;
+    margin-right: 24px;
+}
+
+.navbar-icon-cart {
+    position: relative;
+}
+
+.navbar-right span {
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    width: 16px;
+    height: 16px;
+    font-size: $sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $hospital-purple;
+    color: $white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+@media (max-width:640px) {
+    .menu-mobile-img {
+        display: block;
+    }
+
+    .navbar-left,
+    .navbar-right ul li:nth-child(1) {
+        display: none;
+    }
+}
