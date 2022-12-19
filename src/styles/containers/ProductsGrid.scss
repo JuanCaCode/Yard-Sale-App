@@ -1,0 +1,55 @@
+@import '../vars';
+.cards-container{
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fill,240px);/*autofill, amplia el ancho segun la cantidad de elementos  */
+    gap: 1rem;
+}
+.product-card{
+    width: 240px;
+}
+.product-card>img{
+    width: 100%;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover; /*nos ayudará a no dañar las dimensioens de la imagen*/
+    object-position: center;
+}
+.product-card-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+.details-container :nth-child(1){
+    font-weight: bold;
+    font-size: $md;
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+.details-container :nth-child(2){
+    font-size: $sm;
+    color: $very-light-pink;
+    margin: 0;
+}
+.product-card-info figure img{
+    width: 35px;
+    height: 35px;
+}
+.product-card-info figure{
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+@media (max-width:640px){
+    .cards-container{
+    grid-template-columns: repeat(auto-fill,140px);
+    }
+    .product-card{
+    width: 140px;
+    }
+    .product-card>img{
+    width: 100%;
+    height: 140px;
+    }
+}

@@ -1,10 +1,14 @@
 import React from 'react';
+import Header from '../components/header';
+import ProductsGrid from '../containers/ProductsGrid';
+import Layout from '../containers/Layout';
 
 const Home = () => {
     return (
-        <div>
-            <h1>Yard Sale</h1>
-        </div>
+        <Layout>
+            <Header />
+            <ProductsGrid />
+        </Layout>
     )
 }
 

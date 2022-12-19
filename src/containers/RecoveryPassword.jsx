@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/RecoveryPassword.scss';
+import '../styles/containers/RecoveryPassword.scss';
 import logo from '../../public/assets/logos/logo_yard_sale.svg';
 import email from '../../public/assets/icons/email.svg';
 
