@@ -20,3 +20,16 @@ body{
 .primary_btn:active{
     background-color: $hospital-active-purple;
 }
+.secondary_btn{
+    // width: 100%;
+    border-radius: 8px;
+    border: none;
+    padding: 16px;
+    font-size: $md;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid $hospital-purple;
+    background-color: transparent;
+    color: $hospital-purple;
+    transition: all 0.15s ease-in-out;
+}

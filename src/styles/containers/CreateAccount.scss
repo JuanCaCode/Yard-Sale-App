@@ -10,6 +10,7 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
 .login_logo{
     width: 150px;
     margin-bottom: 48px;
@@ -18,18 +19,24 @@
 }
 .form_title{
     font-size: $lg;
-    text-align: center;
+    text-align: left;
     margin-bottom: 12px;
-}
-.form_subtitle{
-    color: $very-light-pink;
-    font-size: $md;
-    text-align: center;
-    font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
 }
 .login_form{
+    display: flex;
+    flex-direction: column;
+
+}
+.login_form a{
+    color: $hospital-purple;
+    font-size: $sm;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 52px;
+
+}
+.login_form div{
     display: flex;
     flex-direction: column;
 }
@@ -43,9 +50,13 @@
     background-color: $text-input-field;
     border: none;
     border-radius: 8px;
-    padding:10px 8px 10px;
+    padding:6px;
+    height: 30px;
     font-size: $md;
     margin-bottom: 16px;
+}
+.input_passw, .input_email, .input_name{
+    margin-bottom: 22px;
 }
 .form_input::placeholder{
     color: $hospital-purple;
@@ -56,7 +67,11 @@
     margin-bottom: 32px;
 }
 @media (max-width:640px){
-    .login_logo{
-        display: block;
+    .login_form-container{
+        height: 100%;
+    }
+    .login_form{
+        height: 100%;
+        justify-content: space-between;
     }
 }
