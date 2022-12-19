@@ -6,7 +6,8 @@ module.exports = {
     entry:'./src/index.js', // donde está el punto de entrada de la app
     output:{
         path: path.resolve(__dirname,'dist'), //aquí se crea una carpeta distribution para el código final
-        filename: 'bundle.js' //nombre de bundle o de empaquetado
+        filename: 'bundle.js', //nombre de bundle o de empaquetado
+        publicPath:'/'
     },
     resolve:{
         extensions:['.js','.jsx'] //reconoce las extensiones de nuestro proyecto
@@ -59,5 +60,6 @@ module.exports = {
     devServer:{
         static: path.join(__dirname,'dist'),
         port:3000,
+        historyApiFallback:true, //trabajar con la aplicación sin problemas
     }
 }
