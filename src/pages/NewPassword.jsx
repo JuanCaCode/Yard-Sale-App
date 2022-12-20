@@ -1,15 +1,15 @@
 import React from "react";
 import logo from "../../public/assets/logos/logo_yard_sale.svg";
-import '../styles/containers/RecoveryPassword.scss';
+import '../styles/pages/NewPassword.scss';
 
-const RecoveryPassword = () =>{
+const NewPassword = () =>{
     return (
-        <section className="login">
-            <div className="login_form-container">
-                <img src={logo} alt="logo" className="login_logo" />
+        <section className="new-password">
+            <div className="new-password_form-container">
+                <img src={logo} alt="logo" className="new-password_logo" />
                 <h1 className="form_title">Create a new password</h1>
                 <p className="form_subtitle">Enter a new password for your account</p>
-                <form className="login_form" action="#">
+                <form className="new-password_form" action="#">
                     <label htmlFor="password" className="form_label">Password</label>
                     <input id="password" type="password" className="form_input form_input--password" placeholder="*********" />
                     <label htmlFor="password_re-enter" className="form_label">Re-enter password</label>
@@ -21,4 +21,4 @@ const RecoveryPassword = () =>{
     );
 }
 
-export default RecoveryPassword;
+export default NewPassword;

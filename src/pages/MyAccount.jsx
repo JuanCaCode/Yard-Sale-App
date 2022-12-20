@@ -1,11 +1,11 @@
 import React from 'react'
-import '../styles/containers/EditAccount.scss'
-const EditAccount = () => {
+import '../styles/pages/MyAccount.scss'
+const MyAccount = () => {
     return (
-        <section className="login">
-            <div className="login_form-container">
+        <section className="my-account">
+            <div className="my-account_form-container">
                 <h1 className="form_title">My account</h1>
-                <form className="login_form" action="#">
+                <form className="my-account_form" action="#">
                     <div className="form_container_principal">
                         <label htmlFor="name_input" className="form_label">Name</label>
                         <p className="value">Juan Camilo Campo</p>
@@ -21,4 +21,4 @@ const EditAccount = () => {
     )
 }
 
-export default EditAccount
+export default MyAccount

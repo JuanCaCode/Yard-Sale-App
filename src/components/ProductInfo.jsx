@@ -1,14 +1,9 @@
 import React from 'react'
 import logocart from '../../public/assets/icons/bt_add_to_cart.svg';
-import close_icon from '../../public/assets/icons/icon_close.png';
-import '../styles/components/ProductDetail.scss';
 
-const ProductDetail = () => {
+const ProductInfo = () => {
     return (
-        <aside className="product-detail">
-            <div className="product-detail-close">
-                <img src={close_icon} alt="icon close" />
-            </div>
+        <>
             <img className="img-detail-principal" src="https://i.imgur.com/uYKmdB1.png" alt="imagen de producto"  />
             <div className="product-info">
                 <p>$35,00</p>
@@ -21,8 +16,8 @@ const ProductDetail = () => {
                     <span>Add to cart</span>
                 </button>
             </div>
-        </aside>
+        </>
     )
 }
 
-export default ProductDetail
+export default ProductInfo

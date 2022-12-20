@@ -1,21 +1,24 @@
 @import '../vars';
-.product-detail{
+.primary_btn{
+    width: 100%;
+}
+.shopping-cart-container{
     position: absolute;
     right: 0;
     width: 360px;
     padding: 16px;
     box-sizing: border-box;
 }
-.title-container{
+.title-container-shopping-cart{
     display: flex;
     align-items: center;
     gap:14px;
 }
-.title{
+.title-shopping-cart{
     font-size: $lg;
     font-weight: bold;
 }
-.title-container img{
+.title-container-shopping-cart img{
     transform: rotate(180deg);            
 }
 .shopping-cart{
@@ -67,7 +70,7 @@
 }
 
 @media(max-width:640px){
-    .product-detail{
+    .shopping-cart-container{
         width: 100%;
     }
 }

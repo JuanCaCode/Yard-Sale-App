@@ -1,11 +1,11 @@
 import React from 'react'
-import '../styles/containers/CreateAccount.scss'
+import '../styles/pages/CreateAccount.scss'
 const CreateAccount = () => {
     return (
-        <section className="login">
-            <div className="login_form-container">
+        <section className="create-account">
+            <div className="create-account_form-container">
                 <h1 className="form_title">My account</h1>
-                <form className="login_form" action="#">
+                <form className="create-account_form" action="#">
                     <div className="form_container_principal">
                         <label htmlFor="name_input" className="form_label">Name</label>
                         <input id="name_input" type="text" className="form_input input_name" placeholder="Your name" />
