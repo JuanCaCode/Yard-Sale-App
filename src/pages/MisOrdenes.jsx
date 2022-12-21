@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/pages/MisOrdenes.scss';
-import OrdenItem from '../components/OrderItemMisOrdenes';
+import '@styles/pages/MisOrdenes.scss';
+import OrdenItem from '@components/OrderItemMisOrdenes';
 
 const MisOrdenes = () => {
     return (

@@ -1,12 +1,17 @@
-@import '../vars';
-.menu-desktop{
+@import '@vars';
+.menu-desktop {
+    position: fixed;
+    top: 59px;
+    right: 70px;
     width: 100px;
     height: auto;
     border: 1px solid $very-light-pink;
-    border-radius:6px;
-    padding:20px;
-    
+    border-radius: 6px;
+    background-color: $white;
+    padding: 20px;
+    z-index: 2;
 }
+
 .menu_list{
     list-style: none;
     padding: 0;
@@ -32,4 +37,9 @@
 .menu_list li:last-child a{
     color: $hospital-purple;
     font-size: $sm;
+}
+@media (max-width:770px){
+    .menu-desktop{
+        display: none;
+    }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import ProductItem from '../components/ProductItem'
-import '../styles/containers/ProductsGrid.scss'
+import ProductItem from '@components/ProductItem'
+import '@styles/containers/ProductsGrid.scss'
 
 const ProductsGrid = () => {
     return (

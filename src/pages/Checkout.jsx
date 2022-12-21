@@ -1,6 +1,6 @@
 import React from 'react'
-import OrderItemCheckout from '../components/OrderItemCheckout'
-import '../styles/pages/Checkout.scss';
+import OrderItemCheckout from '@components/OrderItemCheckout'
+import '@styles/pages/Checkout.scss';
 
 const Checkout = () => {
     return (

@@ -1,4 +1,4 @@
-@import '../vars';
+@import '@vars';
 nav,
 .navbar-left,
 .navbar-right {
@@ -56,6 +56,10 @@ nav {
     color: $very-light-pink;
     font-size: $sm;
     margin-right: 24px;
+    cursor: pointer;
+}
+.navbar-right ul li:nth-child(1):hover {
+    color: $hospital-purple ;
 }
 
 .navbar-icon-cart {

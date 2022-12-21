@@ -1,6 +1,12 @@
-import React from 'react'
-import iconcart from '../../public/assets/icons/bt_add_to_cart.svg'
+import React, {useState} from 'react'
+import iconcart from '@icons/bt_add_to_cart.svg'
 const ProductItem = () => {
+    //[estado, función modificadora hacía el estado] esto parte del useState
+    const [cart,setCart] = useState([]);
+    const handleClick = ()=>{
+        setCart([])
+    }
+    
     return (
         <article className="product-card">
             <img src="https://i.imgur.com/uYKmdB1.png" alt="product1" />
@@ -9,7 +15,7 @@ const ProductItem = () => {
                     <p>$120,00</p>
                     <p>Headphones</p>
                 </div>
-                <figure>
+                <figure onClick={handleClick}>
                     <img src={iconcart} alt="botón de añadir a carrito de compras" />
                 </figure>
             </div>

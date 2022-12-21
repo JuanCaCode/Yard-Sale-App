@@ -19,8 +19,8 @@ import MenuDesktop from "../components/MenuDesktop";
 import MenuMobile from "../components/MenuMobile";
 
 //containers
-import ProductDetail from "../containers/ProductDetail";
-import ShoppingCart from "../containers/ShoppingCart";
+import ProductDetail from "@containers/ProductDetail";
+import ShoppingCart from "@containers/ShoppingCart";
 
 //estilos
 import '../styles/global.scss';

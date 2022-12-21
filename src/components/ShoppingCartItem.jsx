@@ -1,5 +1,5 @@
 import React from 'react'
-import close_icon from '../../public/assets/icons/icon_close.png';
+import close_icon from '@icons/icon_close.png';
 
 const ShoppingCartItem = () => {
     return (

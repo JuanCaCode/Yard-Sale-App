@@ -1,6 +1,6 @@
 import React from 'react';
-import flechita from '../../public/assets/icons/flechita.svg';
-import ShoppingCartItem from '../components/ShoppingCartItem';
+import flechita from '@icons/flechita.svg';
+import ShoppingCartItem from '@components/ShoppingCartItem';
 
 import '../styles/containers/ShoppingCart.scss';
 

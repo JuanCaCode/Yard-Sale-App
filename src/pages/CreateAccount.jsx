@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/pages/CreateAccount.scss'
+import '@styles/pages/CreateAccount.scss'
 const CreateAccount = () => {
     return (
         <section className="create-account">
