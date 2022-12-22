@@ -10,7 +10,20 @@ module.exports = {
         publicPath:'/'
     },
     resolve:{
-        extensions:['.js','.jsx'] //reconoce las extensiones de nuestro proyecto
+        extensions:['.js','.jsx'], //reconoce las extensiones de nuestro proyecto
+        alias:{
+            '@components':path.resolve(__dirname,'src/components/'),
+            '@containers':path.resolve(__dirname,'src/containers/'),
+            '@pages':path.resolve(__dirname,'src/pages/'),
+            '@routes':path.resolve(__dirname,'src/routes/'),
+            '@styles':path.resolve(__dirname,'src/styles/'),
+            '@icons':path.resolve(__dirname,'src/assets/icons/'),
+            '@logos':path.resolve(__dirname,'src/assets/logos/'),
+            '@images':path.resolve(__dirname,'src/assets/images/'),
+            '@vars':path.resolve(__dirname,'src/styles/_vars.scss/'),
+            '@hooks':path.resolve(__dirname,'src/hooks/'),
+            '@context':path.resolve(__dirname,'src/context/'),
+        }
     },
     module:{
         rules:[
@@ -37,6 +50,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jp(e*)g|svg|gif)$/,
+                // type:'asset',
                 use: [
                     {
                         loader: 'file-loader',

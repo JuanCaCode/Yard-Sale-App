@@ -1,4 +1,4 @@
-@import '../vars';
+@import '@vars';
 nav,
 .navbar-left,
 .navbar-right {
@@ -6,10 +6,16 @@ nav,
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
     justify-content: space-between;
     height: 60px;
     padding: 0px 24px;
     border-bottom: 1px solid $very-light-pink;
+    background-color:$white;
+    z-index: 999;
 }
 
 .menu-mobile-img {
@@ -56,10 +62,15 @@ nav {
     color: $very-light-pink;
     font-size: $sm;
     margin-right: 24px;
+    cursor: pointer;
+}
+.navbar-right ul li:nth-child(1):hover {
+    color: $hospital-purple ;
 }
 
 .navbar-icon-cart {
     position: relative;
+    cursor: pointer;    
 }
 
 .navbar-right span {

@@ -1,51 +1,58 @@
 //modulos
 import React from "react";
 import {BrowserRouter, Routes, Route} from'react-router-dom';
-
-//containers
-import Layout from '../containers/Layout';
-import EmailSentPassRecovery from "../containers/EmailSentPassRecovery";
-import RecoveryPassword from "../containers/RecoveryPassword";
-import Login from '../containers/Login';
-import CreateAccount from '../containers/CreateAccount';
-import EditAccount from '../containers/EditAccount';
-import MiOrden from '../containers/MiOrden';
-import MisOrdenes from '../containers/MisOrdenes';
-
-//componentes
-import MenuDesktop from "../components/MenuDesktop";
-import MenuMobile from "../components/MenuMobile";
-import ProductDetail from "../components/ProductDetail";
-import ShoppingCart from "../components/ShoppingCart";
+import AppContext from "@context/AppContext";
 
 //pages
-import Home from '../pages/Home';
-import NotFound from "../pages/NotFound";
+import Layout from '@containers/Layout';
+import PassRecoverySent from "@pages/PassRecoverySent";
+import NewPassword from "@pages/NewPassword";
+import Login from '@pages/Login';
+import CreateAccount from '@pages/CreateAccount';
+import MyAccount from '@pages/MyAccount';
+import Checkout from '@pages/Checkout';
+import MisOrdenes from '@pages/MisOrdenes';
+import Home from '@pages/Home';
+import NotFound from "@pages/NotFound";
+
+//componentes
+import MenuDesktop from "@components/MenuDesktop";
+import MenuMobile from "@components/MenuMobile";
+
+//containers
+import ProductDetail from "@containers/ProductDetail";
+import ShoppingCart from "@containers/ShoppingCart";
 
 //estilos
 import '../styles/global.scss';
 
+//Hooks
+import useInitialState from "@hooks/useInitialState";
+
 const App = ()=>{
+    const initialState = useInitialState()
     return (
-        <BrowserRouter>
-            <Layout>
-                <Routes>
-                    <Route exact path ="/" element={<Home />} />
-                    <Route exact path="/emailsent" element={<EmailSentPassRecovery />}  />
-                    <Route exact path="/recovery-password" element={<RecoveryPassword />}  />
-                    <Route exact path="/login" element={<Login />}  />
-                    <Route exact path="/create-account" element={<CreateAccount />}  />
-                    <Route exact path="/edit-account" element={<EditAccount />}  />
-                    <Route exact path="/mi-orden" element={<MiOrden />}  />
-                    <Route exact path="/mis-ordenes" element={<MisOrdenes />}  />
-                    <Route exact path="/menu-desktop" element={<MenuDesktop />}  />
-                    <Route exact path="/menu-mobile" element={<MenuMobile />}  />
-                    <Route exact path="/product-detail" element={<ProductDetail />}  />
-                    <Route exact path="/shopping-cart" element={<ShoppingCart />}  />
-                    <Route path="*" element={<NotFound />}/>
-                </Routes>
-            </Layout>
-        </BrowserRouter>
+        <AppContext.Provider value = {initialState}>
+            <BrowserRouter>
+                <Layout>
+                    <Routes>
+                        <Route exact path ="/" element={<Home />} />
+                        <Route exact path="/email-sent" element={<PassRecoverySent />}  />
+                        <Route exact path="/new-password" element={<NewPassword />}  />
+                        <Route exact path="/login" element={<Login />}  />
+                        <Route exact path="/create-account" element={<CreateAccount />}  />
+                        <Route exact path="/my-account" element={<MyAccount />}  />
+                        <Route exact path="/checkout" element={<Checkout />}  />
+                        <Route exact path="/mis-ordenes" element={<MisOrdenes />}  />
+                        <Route exact path="/menu-desktop" element={<MenuDesktop />}  />
+                        <Route exact path="/menu-mobile" element={<MenuMobile />}  />
+                        <Route exact path="/product-detail" element={<ProductDetail />}  />
+                        <Route exact path="/shopping-cart" element={<ShoppingCart />}  />
+                        <Route path="*" element={<NotFound />}/>
+                    </Routes>
+                </Layout>
+            </BrowserRouter>
+        </AppContext.Provider>
     );
 }
 export default App;

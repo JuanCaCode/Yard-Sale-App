@@ -1,14 +1,11 @@
 import React from 'react';
-import Header from '../components/header';
-import ProductsGrid from '../containers/ProductsGrid';
-import Layout from '../containers/Layout';
+import ProductsGrid from '@containers/ProductsGrid';
 
 const Home = () => {
     return (
-        <Layout>
-            <Header />
+        <>
             <ProductsGrid />
-        </Layout>
+        </>
     )
 }
 

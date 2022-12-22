@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/components/MenuDesktop.scss';
+import '@styles/components/MenuDesktop.scss';
 
 const MenuDesktop = () => {
     return (
-        <div className="desktop-menu">
+        <div className="menu-desktop">
             <ul className="menu_list">
                 <li><a href="">My orders</a></li>
                 <li><a href="">My account</a></li>
