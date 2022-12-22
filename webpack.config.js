@@ -22,6 +22,7 @@ module.exports = {
             '@images':path.resolve(__dirname,'src/assets/images/'),
             '@vars':path.resolve(__dirname,'src/styles/_vars.scss/'),
             '@hooks':path.resolve(__dirname,'src/hooks/'),
+            '@context':path.resolve(__dirname,'src/context/'),
         }
     },
     module:{

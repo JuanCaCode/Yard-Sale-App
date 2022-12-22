@@ -1,13 +1,19 @@
-import React , {useState} from 'react'
+//Modulos
+import React , {useState,useContext} from 'react'
+import AppContext from '@context/AppContext';
 import MenuDesktop from '@components/MenuDesktop';
-
+import ShoppingCart from '@containers/ShoppingCart';
 import '@styles/components/Header.scss'
-    import logo from '@logos/logo_yard_sale.svg';
-    import icon_menu from '@icons/icon_menu.svg';
-    import shopping_cart from '@icons/icon_shopping_cart.svg';
+//imagenes
+import logo from '@logos/logo_yard_sale.svg';
+import icon_menu from '@icons/icon_menu.svg';
+import shopping_cart from '@icons/icon_shopping_cart.svg';
 
 const Header = () => {
     const [toggle,setToggle] = useState(false);
+    const [toggleOrders, setToggleOrders] = useState(false);
+    const {state} = useContext(AppContext);
+
     const handleToggle = () =>{
         setToggle(!toggle)//!toggle cambiará el estado de true a false y de false a true.
     }
@@ -28,13 +34,17 @@ const Header = () => {
             <div className="navbar-right">
                 <ul>
                     <li onClick={handleToggle}>camilo@example.com</li>
-                    <li className="navbar-icon-cart">
+                    <li 
+                        className="navbar-icon-cart" 
+                        onClick={() => setToggleOrders(!toggleOrders)}
+                    >
                         <img src={shopping_cart} alt="shopping cart" />
-                        <span>2</span>
+                        {state.cart.length > 0 ? <span>{state.cart.length}</span>: null}
                     </li>
                 </ul>
             </div>
             {toggle && <MenuDesktop />}
+            {toggleOrders && <ShoppingCart />}
         </nav>
     )
 }

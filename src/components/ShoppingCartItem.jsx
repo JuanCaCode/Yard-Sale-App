@@ -1,15 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import close_icon from '@icons/icon_close.png';
+import AppContext from '@context/AppContext';
 
-const ShoppingCartItem = () => {
+const ShoppingCartItem = (data) => {
+    const {product, indexValue} = data;
+    const {removeFromCart} = useContext(AppContext);
     return (
         <div className="shopping-cart">
             <figure>
-                <img src="https://i.imgur.com/uYKmdB1.png" alt="fotografia de producto" />
+                <img src={product.images[0]} alt={product.title} />
             </figure>
-            <p>Headphones</p>
-            <p>$120.00</p>
-            <img src={close_icon} alt="flecha de redireccionamiento" />
+            <p>{product.title}</p>
+            <p>${product.price}</p>
+            <img onClick={()=> removeFromCart(indexValue)} src={close_icon} alt="flecha de redireccionamiento" />
         </div>
     )
 }

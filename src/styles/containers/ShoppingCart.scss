@@ -3,11 +3,17 @@
     width: 100%;
 }
 .shopping-cart-container{
-    position: absolute;
+    position: fixed;
+    flex-direction: column;
     right: 0;
+    top: 60px;
+    bottom: 0;
+    z-index: 3;
     width: 360px;
     padding: 16px;
     box-sizing: border-box;
+    overflow-y:auto;
+    background-color: $white;
 }
 .title-container-shopping-cart{
     display: flex;
