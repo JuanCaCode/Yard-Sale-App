@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     gap:14px;
+    cursor: pointer;
 }
 .title-shopping-cart{
     font-size: $lg;
@@ -73,6 +74,11 @@
 .my-order-content p:nth-child(1){
     font-size: $md;
     font-weight: bold;
+}
+.mjs-add-products{
+    color: $very-light-pink;
+    text-align: center;
+    padding: 3rem 1rem;
 }
 
 @media(max-width:640px){

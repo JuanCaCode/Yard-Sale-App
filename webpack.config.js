@@ -75,5 +75,6 @@ module.exports = {
         static: path.join(__dirname,'dist'),
         port:3000,
         historyApiFallback:true, //trabajar con la aplicación sin problemas
+        watchFiles: path.join(__dirname, "./**"),
     }
 }

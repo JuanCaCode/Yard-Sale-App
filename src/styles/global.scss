@@ -21,6 +21,11 @@ body{
 .primary_btn:active{
     background-color: $hospital-active-purple;
 }
+.primary_btn:disabled,
+.primary_btn[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}
 .secondary_btn{
     // width: 100%;
     border-radius: 8px;

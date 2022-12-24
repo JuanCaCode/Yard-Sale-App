@@ -88,6 +88,17 @@ nav {
     border-radius: 50%;
     font-weight: bold;
 }
+.background-black{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    cursor: pointer;
+}
 
 @media (max-width:640px) {
     .menu-mobile-img {

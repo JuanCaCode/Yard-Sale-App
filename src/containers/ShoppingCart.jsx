@@ -5,7 +5,8 @@ import AppContext from '@context/AppContext';
 
 import '../styles/containers/ShoppingCart.scss';
 
-const ShoppingCart = () => {
+const ShoppingCart = (props) => {
+    console.log(props)
     const {state} = useContext(AppContext)
     const sumTotal = () =>{
         const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
@@ -14,25 +15,25 @@ const ShoppingCart = () => {
     }
     return (
         <aside className="shopping-cart-container">
-            <div className="title-container-shopping-cart">
-                <img src={flechita} alt="icon close" />
+            <div onClick={props.handleCartToggle}  className="title-container-shopping-cart">
+                <img  src={flechita} alt="icon close" />
                 <p className="title-shopping-cart">Shopping Cart</p>        
             </div>
             <div className="articulos-container">
+                {state.cart.length == 0? <p className='mjs-add-products'>Add a product into the Shopping Cart</p>:null}
                 {state.cart.map((product,index)=>(
                     <ShoppingCartItem 
-                        product = {product} 
+                        product = {product}
                         key={index}
                         indexValue={index}
                     />
                 ))}
-
             </div>
             <div className="my-order-content">
                 <p>Total</p>
                 <p>${sumTotal()}</p>
             </div>
-            <button className="primary_btn">
+            <button disabled={state.cart.length == 0? true:false} className="primary_btn">
                 <span>Checkout</span>
             </button>
         </aside>
