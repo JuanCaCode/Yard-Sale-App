@@ -5,14 +5,17 @@ body{
 }
 .primary_btn{
     width: 100%;
+    height: 50px;
     border-radius: 8px;
     border: none;
-    padding: 16px;
     font-size: $md;
     font-weight: bold;
     cursor: pointer;
     background-color: $hospital-purple;
     color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.15s ease-in-out;
 }
 .primary_btn:hover{
@@ -37,6 +40,20 @@ body{
     border: 1px solid $hospital-purple;
     background-color: transparent;
     color: $hospital-purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.15s ease-in-out;
 }
 
+.background-black{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    cursor: pointer;
+}

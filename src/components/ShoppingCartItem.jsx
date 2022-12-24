@@ -12,7 +12,7 @@ const ShoppingCartItem = (data) => {
             </figure>
             <p>{product.title}</p>
             <p>${product.price}</p>
-            <img onClick={()=> removeFromCart(indexValue)} src={close_icon} alt="flecha de redireccionamiento" />
+            <img className='close-x' onClick={()=> removeFromCart(indexValue)} src={close_icon} alt="flecha de redireccionamiento" />
         </div>
     )
 }

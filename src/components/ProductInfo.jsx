@@ -1,17 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import AppContext from '@context/AppContext'
 import logocart from '@icons/bt_add_to_cart.svg';
 
 const ProductInfo = () => {
+    const {state, addToCart,} = useContext(AppContext)
+    const pro=state.currentProduct;
     return (
         <>
-            <img className="img-detail-principal" src="https://i.imgur.com/uYKmdB1.png" alt="imagen de producto"  />
+            <img className="img-detail-principal" src={pro.images[0]} alt={pro.title}  />
             <div className="product-info">
-                <p>$35,00</p>
-                <p>Headphones</p>
-                <p>
-                    The new AirPods combine intelligent design with breakthrough technology and crystal-clear sound. Powered by the new Apple H1 headphone chip, AirPods now feature hands-free access to Siri using just your voice. And up to 3 hours of talk time on a single charge.¹
-                </p>
-                <button className="primary_btn">
+                <p>${pro.price}</p>
+                <p>{pro.title}</p>
+                <p>{pro.description}</p>
+                <button onClick={()=>addToCart(pro)} className="primary_btn">
                     <img src={logocart} alt="icono carro de compras" />
                     <span>Add to cart</span>
                 </button>

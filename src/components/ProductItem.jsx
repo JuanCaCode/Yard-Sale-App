@@ -1,17 +1,20 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext} from 'react'
 import AppContext from '@context/AppContext';
 import iconcart from '@icons/bt_add_to_cart.svg'
 import '@styles/components/ProductItem.scss'
 
-const ProductItem = ({product}) => {
-    const { addToCart } = useContext(AppContext);
+const ProductItem = ({handleDetailToggle,product}) => {
+    const { addToCart, addToDetail } = useContext(AppContext);
     const handleClick = producto =>{
-        addToCart(producto)
+        addToCart(producto);
     }
-    // console.log(product.product.id)
-    return (
+    const handleProductDetail = (producto) =>{
+        addToDetail(producto);
+        handleDetailToggle('open');
+    }
+    return ( 
         <article className="product-card">
-            <figure className='product-card-img'>
+            <figure className='product-card-img' onClick={()=>handleProductDetail(product)}>
                 <img src={product.images[0]} alt={product.title} />
             </figure>
             <div className="product-card-info">

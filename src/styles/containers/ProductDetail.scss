@@ -1,9 +1,16 @@
 @import '@vars';
 .product-detail{
-    position: absolute;
+    position: fixed;
+    top: 60px;
     right: 0;
     width: 360px;
+    height: calc(100vh - 60px);
     padding-bottom: 24px;
+    z-index: 2;
+    background-color:$white;
+    box-sizing: border-box;
+    flex-direction: column;
+    overflow-y:scroll;
 }
 .product-detail-close{
     width: 30px;

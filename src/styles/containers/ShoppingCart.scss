@@ -80,7 +80,9 @@
     text-align: center;
     padding: 3rem 1rem;
 }
-
+.close-x{
+    cursor: pointer;
+}
 @media(max-width:640px){
     .shopping-cart-container{
         width: 100%;
