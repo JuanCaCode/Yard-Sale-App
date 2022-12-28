@@ -1,7 +1,8 @@
 import React, {useContext} from 'react'
 import AppContext from '@context/AppContext';
 import iconcart from '@icons/bt_add_to_cart.svg'
-import '@styles/components/ProductItem.scss'
+import styles from '@styles/components/ProductItem.module.scss'
+import Image from 'next/image';
 
 const ProductItem = ({handleDetailToggle,product}) => {
     const { addToCart, addToDetail } = useContext(AppContext);
@@ -13,17 +14,18 @@ const ProductItem = ({handleDetailToggle,product}) => {
         handleDetailToggle('open');
     }
     return ( 
-        <article className="product-card">
-            <figure className='product-card-img' onClick={()=>handleProductDetail(product)}>
-                <img src={product.images[0]} alt={product.title} />
+        <article className={styles["product-card"]}>
+            <figure className={styles['product-card-img']} onClick={()=>handleProductDetail(product)}>
+                {/* No le coloco Image para que no genere errores */}
+                <img className={styles["card-img"]} src={product.images[0]} alt={product.title} />
             </figure>
-            <div className="product-card-info">
-                <div className="details-container">
+            <div className={styles["product-card-info"]}>
+                <div className={styles["details-container"]}>
                     <p>${product.price}</p>
                     <p>{product.title}</p>
                 </div>
                 <figure onClick={()=>handleClick(product)}>
-                    <img src={iconcart} alt="botón de añadir a carrito de compras" />
+                    <Image src={iconcart} alt="botón de añadir a carrito de compras" />
                 </figure>
             </div>
         </article>

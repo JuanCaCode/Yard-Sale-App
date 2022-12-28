@@ -31,9 +31,9 @@
 .product-card-img:hover:after{
     opacity:1;
 }
-.product-card-img img{
-    width: 240px;
-    height: 240px;
+.card-img{
+    width: 240px !important;
+    height: 240px !important;;
     border-radius: 20px;
     object-fit: cover;
     object-position: center;

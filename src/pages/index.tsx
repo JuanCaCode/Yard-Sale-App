@@ -1,9 +1,9 @@
-import Header from '@components/Header';
+import ProductsGrid from '@containers/ProductsGrid';
 
 export default function Home (){
   return (
     <>
-      <Header />
+      <ProductsGrid />
     </>
   )
 }

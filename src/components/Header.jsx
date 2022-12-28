@@ -1,5 +1,6 @@
 //Modulos
-import React , {useState,useContext} from 'react'
+import React , {useState,useContext} from 'react';
+import Image from 'next/image';
 import AppContext from '@context/AppContext';
 import MenuDesktop from '@components/MenuDesktop';
 import ShoppingCart from '@containers/ShoppingCart';
@@ -24,8 +25,8 @@ const Header = () => {
     return (
         <header>
             <nav className={styles.nav}>
-                <img className={styles["menu-mobile-img"]} src={icon_menu} alt="icono de menu mobile" />
-                <img className={styles.logo} src={logo} alt="logo" />
+                <Image className={styles["menu-mobile-img"]} src={icon_menu} alt="icono de menu mobile" />
+                <Image className={styles.logo} src={logo} alt="logo" />
                 <div className={styles["navbar-left"]}>
                     <ul>
                         <li><a href="/">All</a></li>
@@ -43,7 +44,7 @@ const Header = () => {
                             className={styles["navbar-icon-cart"]} 
                             onClick={handleCartToggle}
                         >
-                            <img src={shopping_cart} alt="shopping cart" />
+                            <Image src={shopping_cart} alt="shopping cart" />
                             {state.cart.length > 0 ? <span>{state.cart.length}</span>: null}
                         </li>
                     </ul>
