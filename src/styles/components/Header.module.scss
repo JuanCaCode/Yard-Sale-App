@@ -1,11 +1,12 @@
-@import '@vars';
-nav,
+@import '@styles/vars';
+
+.nav,
 .navbar-left,
 .navbar-right {
     display: flex;
 }
 
-nav {
+.nav {
     position: fixed;
     top: 0;
     width: 100%;

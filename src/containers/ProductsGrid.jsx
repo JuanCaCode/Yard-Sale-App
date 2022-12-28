@@ -1,8 +1,8 @@
 import React , {useState} from 'react';
 import ProductItem from '@components/ProductItem';
 import ProductDetail from '@containers/ProductDetail';
-import '@styles/containers/ProductsGrid.scss';
 import useGetProducts from '@hooks/useGetProducts';
+import styles from '@styles/containers/ProductsGrid.module.scss';
 
 const API = 'https://api.escuelajs.co/api/v1/products'; //Por el momento recibimos la API de esta forma (NO ADECUADA)
 
@@ -14,8 +14,8 @@ const ProductsGrid = () => {
         action === 'open'? setDetailToggle(true): setDetailToggle(false)
     };
     return (
-        <section className="main-container">
-            <div className="cards-container">
+        <section className={styles["main-container"]}>
+            <div className={styles["cards-container"]}>
                 {products.map(product =>{ //Se mapea todos los productos uno a uno y por cada uno se crea un componente de Product Item
                     return (
                         <ProductItem 

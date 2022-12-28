@@ -3,7 +3,7 @@ import flechita from '@icons/flechita.svg';
 import ShoppingCartItem from '@components/ShoppingCartItem';
 import AppContext from '@context/AppContext';
 
-import '../styles/containers/ShoppingCart.scss';
+import styles from '@styles/containers/ShoppingCart.module.scss';
 
 const ShoppingCart = (props) => {
     console.log(props)
@@ -14,7 +14,8 @@ const ShoppingCart = (props) => {
         return sum
     }
     return (
-        <aside className="shopping-cart-container">
+        // <aside className="shopping-cart-container">
+        <aside className={styles.ShoppingCart}>
             <div onClick={props.handleCartToggle}  className="title-container-shopping-cart">
                 <img  src={flechita} alt="icon close" />
                 <p className="title-shopping-cart">Shopping Cart</p>        

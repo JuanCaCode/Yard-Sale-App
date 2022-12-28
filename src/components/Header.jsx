@@ -3,11 +3,11 @@ import React , {useState,useContext} from 'react'
 import AppContext from '@context/AppContext';
 import MenuDesktop from '@components/MenuDesktop';
 import ShoppingCart from '@containers/ShoppingCart';
-import '@styles/components/Header.scss'
 //imagenes
 import logo from '@logos/logo_yard_sale.svg';
 import icon_menu from '@icons/icon_menu.svg';
 import shopping_cart from '@icons/icon_shopping_cart.svg';
+import styles from '@styles/components/Header.module.scss';
 
 const Header = () => {
     const {state} = useContext(AppContext);
@@ -23,10 +23,10 @@ const Header = () => {
 
     return (
         <header>
-            <nav>
-                <img className="menu-mobile-img" src={icon_menu} alt="icono de menu mobile" />
-                <img className="logo" src={logo} alt="logo" />
-                <div className="navbar-left">
+            <nav className={styles.nav}>
+                <img className={styles["menu-mobile-img"]} src={icon_menu} alt="icono de menu mobile" />
+                <img className={styles.logo} src={logo} alt="logo" />
+                <div className={styles["navbar-left"]}>
                     <ul>
                         <li><a href="/">All</a></li>
                         <li><a href="/">Clothes</a></li>
@@ -36,11 +36,11 @@ const Header = () => {
                         <li><a href="/">Otros</a></li>
                     </ul>
                 </div>
-                <div className="navbar-right">
+                <div className={styles["navbar-right"]}>
                     <ul >
                         <li onClick={handleToggle}>camilo@example.com</li>
                         <li 
-                            className="navbar-icon-cart" 
+                            className={styles["navbar-icon-cart"]} 
                             onClick={handleCartToggle}
                         >
                             <img src={shopping_cart} alt="shopping cart" />
