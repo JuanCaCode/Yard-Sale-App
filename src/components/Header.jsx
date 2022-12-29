@@ -9,6 +9,7 @@ import logo from '@logos/logo_yard_sale.svg';
 import icon_menu from '@icons/icon_menu.svg';
 import shopping_cart from '@icons/icon_shopping_cart.svg';
 import styles from '@styles/components/Header.module.scss';
+import Link from 'next/link';
 
 const Header = () => {
     const {state} = useContext(AppContext);
@@ -16,11 +17,11 @@ const Header = () => {
     const [toggleOrders, setToggleOrders] = useState(false);
 
     const handleToggle = () =>{
-        setToggle(!toggle)//!toggle cambiará el estado de true a false y de false a true.
-    }
+        setToggle(!toggle);//!toggle cambiará el estado de true a false y de false a true.
+    };
     const handleCartToggle = () =>{
-        setToggleOrders(!toggleOrders)
-    }
+        setToggleOrders(!toggleOrders);
+    };
 
     return (
         <header>
@@ -29,12 +30,12 @@ const Header = () => {
                 <Image className={styles.logo} src={logo} alt="logo" />
                 <div className={styles["navbar-left"]}>
                     <ul>
-                        <li><a href="/">All</a></li>
-                        <li><a href="/">Clothes</a></li>
-                        <li><a href="/">Electronics</a></li>
-                        <li><a href="/">Furnitures</a></li>
-                        <li><a href="/">Toys</a></li>
-                        <li><a href="/">Otros</a></li>
+                        <li><Link href="/">All</Link></li>
+                        <li><Link href="/">Clothes</Link></li>
+                        <li><Link href="/">Electronics</Link></li>
+                        <li><Link href="/">Furnitures</Link></li>
+                        <li><Link href="/">Toys</Link></li>
+                        <li><Link href="/">Otros</Link></li>
                     </ul>
                 </div>
                 <div className={styles["navbar-right"]}>
@@ -54,9 +55,10 @@ const Header = () => {
             </nav>
             
             {//Aparece fondo negro detrás que al darle click va a cerrar todos los menús abiertos
-            (toggleOrders || toggle) && <div onClick={()=>{if(toggleOrders || toggle){ setToggle(false); setToggleOrders(false)}}} className='background-black'></div>}
+            (toggleOrders || toggle) && <div onClick={()=>{if(toggleOrders || toggle){ setToggle(false); setToggleOrders(false);};}} className='background-black'></div>
+            }
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
