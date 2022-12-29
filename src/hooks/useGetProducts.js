@@ -11,8 +11,6 @@ const useGetProducts = (API) =>{ //recibe el valor de API
             const productsFiltered = array.filter(product=> product.images[0] !== 'URL'); // o que vengan con un string 'URL'
             console.log(productsFiltered)
             setProducts(productsFiltered)
-
-             //enviamos los datos de la constante a products por medio del hook useState
         })();
     }, [])
     return products; //retornamos los productos

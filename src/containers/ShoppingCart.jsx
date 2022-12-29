@@ -1,5 +1,7 @@
 import React ,{useContext} from 'react';
+import Link from 'next/link';
 import flechita from '@icons/flechita.svg';
+import Image from 'next/image';
 import ShoppingCartItem from '@components/ShoppingCartItem';
 import AppContext from '@context/AppContext';
 
@@ -14,14 +16,13 @@ const ShoppingCart = (props) => {
         return sum
     }
     return (
-        // <aside className="shopping-cart-container">
-        <aside className={styles.ShoppingCart}>
-            <div onClick={props.handleCartToggle}  className="title-container-shopping-cart">
-                <img  src={flechita} alt="icon close" />
-                <p className="title-shopping-cart">Shopping Cart</p>        
+        <aside className={styles["shopping-cart-container"]}>
+            <div onClick={props.handleCartToggle}  className={styles["title-container-shopping-cart"]}>
+                <Image  src={flechita} alt="icon close" />
+                <p className={styles["title-shopping-cart"]}>Shopping Cart</p>        
             </div>
-            <div className="articulos-container">
-                {state.cart.length == 0? <p className='mjs-add-products'>Add a product into the Shopping Cart</p>:null}
+            <div className={styles["articulos-container"]}>
+                {state.cart.length == 0? <p className={styles['mjs-add-products']}>Add a product into the Shopping Cart</p>:null}
                 {state.cart.map((product,index)=>(
                     <ShoppingCartItem 
                         product = {product}
@@ -30,13 +31,15 @@ const ShoppingCart = (props) => {
                     />
                 ))}
             </div>
-            <div className="my-order-content">
+            <div className={styles["my-order-content"]}>
                 <p>Total</p>
                 <p>${sumTotal()}</p>
             </div>
-            <button disabled={state.cart.length == 0? true:false} className="primary_btn">
-                <span>Checkout</span>
-            </button>
+            <Link href="/checkout">
+                <button disabled={state.cart.length == 0? true:false} className="primary_btn">
+                    <span>Checkout</span>
+                </button>
+            </Link>
         </aside>
     );
 }
