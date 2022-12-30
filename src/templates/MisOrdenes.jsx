@@ -1,12 +1,12 @@
 import React from 'react'
-import '@styles/pages/MisOrdenes.scss';
+import styles from '@styles/pages/MisOrdenes.scss';
 import OrdenItem from '@components/OrderItemMisOrdenes';
 
 const MisOrdenes = () => {
     return (
-        <section className="my-order">
-            <div className="my-order-container">
-                <h1 className="title">My orders</h1>
+        <section className={styles["my-order"]}>
+            <div className={styles["my-order-container"]}>
+                <h1 className={styles["title"]}>My orders</h1>
                 <OrdenItem />
                 <OrdenItem />
                 <OrdenItem />

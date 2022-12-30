@@ -1,9 +1,11 @@
 //En este login utilizaremos el hook useRef para aplicar a nuestro formulario
 import React, {useRef} from 'react';
-import '@styles/pages/Login.scss';
+import styles from '@styles/pages/Login.scss';
 import logo from '@logos/logo_yard_sale.svg';
+import Link from 'next/link';
+import Image from 'next/image';
 
-const login = () => {
+const Login = () => {
     const formulario = useRef(null);
 
     const handleSubmit = (event) =>{
@@ -17,22 +19,22 @@ const login = () => {
     }
 
     return (
-        <section className="login">
-            <div className="login_form-container">
-                <img src={logo} alt="logo" className="login_logo" />
+        <section className={styles["login"]}>
+            <div className={styles["login_form-container"]}>
+                <Image src={logo} alt="logo" className={styles["login_logo"]} />
                 {/* Hacemos referencia al formulario */}
-                <form className="login_form" action="/" ref={formulario}>
-                    <label htmlFor="email_input" className="form_label">Email address</label>
-                    <input name="email_input" type="text" className="form_input" placeholder="login@example.com" />
+                <form className={styles["login_form"]} action="/" ref={formulario}>
+                    <label htmlFor="email_input" className={styles["form_label"]}>Email address</label>
+                    <input name="email_input" type="text" className={styles["form_input"]} placeholder="login@example.com" />
                     <label htmlFor="password_input" className="form_label">Password</label>
-                    <input name="password_input" type="password" className="form_input" placeholder="*********" />
-                    <button type='submit' onClick={handleSubmit} className="form_btn primary_btn">Login</button>
-                    <a href="/">Forgot my password</a>
+                    <input name="password_input" type="password" className={styles["form_input"]} placeholder="*********" />
+                    <button type='submit' onClick={handleSubmit} className={`${styles["form_btn"]} primary_btn`} >Login</button>
+                    <Link href="/">Forgot my password</Link>
                 </form>
-                <button onClick={handleSubmit} className="secondary_btn sign_up_btn">Sign up</button>
+                <button onClick={handleSubmit} className={styles["secondary_btn sign_up_btn"]}>Sign up</button>
             </div>
         </section>
     )
 }
 
-export default login
+export default Login;

@@ -1,11 +1,22 @@
 import React from 'react'
 import styles from '@styles/pages/Checkout.module.scss';
-const OrderItemCheckout = () => {
+
+import Image from 'next/image';
+const OrderItemCheckout = ({product}) => {
+    console.log(product)
     return (
         <div className={styles["shopping-cart"]}>
-            <figure><img src="https://i.imgur.com/uYKmdB1.png" alt="fotografia de producto" /></figure>
-            <p>Headphones</p>
-            <p>$120.00</p>
+            <figure>
+                <Image
+                    className={styles["shopping-cart-image-thumb"]}
+                    width={80} height={80}
+                    src={product.images[0]}
+                    alt="fotografia de producto"
+                />
+            </figure>
+
+            <p>{product.title? product.title :"no hay titlo"}</p>
+            <p>${product.price}</p>
         </div>
     )
 }

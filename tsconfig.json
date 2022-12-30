@@ -27,6 +27,6 @@
         "@styles/*":["styles/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.tsx", "src/components/Header.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.tsx", "src/components/Header.tsx", "src/pages/checkout.jsx"],
   "exclude": ["node_modules"], 
 }

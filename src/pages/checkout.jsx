@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import OrderItemCheckout from '@components/OrderItemCheckout';
+import AppContext from '@context/AppContext';
 import styles from '@styles/pages/Checkout.module.scss';
 
 const Checkout = () => {
+  const {state}= useContext(AppContext)
+  
   return (
     <>
       <Head>
@@ -19,9 +22,14 @@ const Checkout = () => {
             </p>
             <p>$560.00</p>
           </div>
-          {/* Componente de items a desplegar */}
-          <OrderItemCheckout />
-          <OrderItemCheckout />
+          {
+            state.cart.map((product)=> {
+              console.log(product);
+              return(
+              <OrderItemCheckout product={product} />
+              )
+            })
+          }
         </div>
       </section>
     </>

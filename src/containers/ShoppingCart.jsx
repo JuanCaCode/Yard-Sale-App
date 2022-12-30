@@ -8,7 +8,6 @@ import AppContext from '@context/AppContext';
 import styles from '@styles/containers/ShoppingCart.module.scss';
 
 const ShoppingCart = (props) => {
-    console.log(props)
     const {state} = useContext(AppContext)
     const sumTotal = () =>{
         const reducer = (accumulator, currentValue) => accumulator + currentValue.price;

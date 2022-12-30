@@ -9,7 +9,17 @@ const ProductInfo = () => {
     const pro=state.currentProduct;
     return (
         <>
-            <img className={styles["img-detail-principal"]} src={pro.images[0]} alt={pro.title}  />
+            <figure className={styles["figure-product-image"]}>
+                <Image 
+                className={styles["img-detail-principal"]}
+                src={pro.images[0]} 
+                alt={pro.title}
+                width={400}
+                height={400}
+                priority={true}
+                />
+            </figure>
+
             <div className={styles["product-info"]}>
                 <p>${pro.price}</p>
                 <p>{pro.title}</p>

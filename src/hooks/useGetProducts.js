@@ -10,7 +10,6 @@ const useGetProducts = (API) => {
       const response = await Axios(API); //llamamos los productos de la API y los guardamos en la constante
       const array = response.data.filter((product) => product.images[0] !== ''); //pro no vengan con imagen
       const productsFiltered = array.filter((product) => product.images[0] !== 'URL'); // o que vengan con un string 'URL'
-      console.log(productsFiltered);
       setProducts(productsFiltered);
     })();
   }, [API]);

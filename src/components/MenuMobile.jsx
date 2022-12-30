@@ -1,26 +1,27 @@
 import React from 'react';
-import '@styles/components/MenuMobile.scss';
+import Link from 'next/link';
+import styles from '@styles/components/MenuMobile.scss';
 
 const MenuMobile = () => {
     return (
-        <div className="mobile-menu">
-            <ul className="menu_list_mobile">
+        <div className={styles["mobile-menu"]}>
+            <ul className={styles["menu_list_mobile"]}>
                 <li>CATEGORIES</li>
-                <li><a href="/">All</a></li>
-                <li><a href="/">Clothes</a></li>
-                <li><a href="/">Electronics</a></li>
-                <li><a href="/">Furnitures</a></li>
-                <li><a href="/">Toys</a></li>
-                <li><a href="/">Other</a></li>
+                <li><Link href="/">All</Link></li>
+                <li><Link href="/">Clothes</Link></li>
+                <li><Link href="/">Electronics</Link></li>
+                <li><Link href="/">Furnitures</Link></li>
+                <li><Link href="/">Toys</Link></li>
+                <li><Link href="/">Other</Link></li>
             </ul>
             <div>
-                <ul className="menu_list_mobile">
-                    <li><a href="">My orders</a></li>
-                    <li><a href="">My account</a></li>
+                <ul className={styles["menu_list_mobile"]}>
+                    <li><Link href="">My orders</Link></li>
+                    <li><Link href="">My account</Link></li>
                 </ul>
-                <ul className="menu_list_mobile last_i_menu">
-                    <li><a href="">camilo@example.com</a></li>
-                    <li><a href="">Sign out</a></li>
+                <ul className={styles["menu_list_mobile last_i_menu"]}>
+                    <li><Link href="">camilo@example.com</Link></li>
+                    <li><Link href="">Sign out</Link></li>
                 </ul>
             </div>
         </div>

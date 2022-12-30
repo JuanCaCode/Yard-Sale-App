@@ -32,8 +32,8 @@
     opacity:1;
 }
 .card-img{
-    width: 240px !important;
-    height: 240px !important;;
+    width: 240px;
+    height: 240px;
     border-radius: 20px;
     object-fit: cover;
     object-position: center;
@@ -72,7 +72,7 @@
     margin: 0px;
 }
 @media (max-width:640px){
-    .product-card-img, .product-card-img img{
+    .product-card-img, .card-img{
         width: 140px;
         height: 140px;
     }

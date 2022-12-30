@@ -24,10 +24,13 @@ const Header = () => {
     };
 
     return (
+        <>
         <header>
             <nav className={styles.nav}>
-                <Image className={styles["menu-mobile-img"]} src={icon_menu} alt="icono de menu mobile" />
-                <Image className={styles.logo} src={logo} alt="logo" />
+                <Image as={'image'} priority={true} className={styles["menu-mobile-img"]} src={icon_menu} alt="icono de menu mobile" />
+                <Link href="/">
+                    <Image as={'image'} priority={true} className={styles.logo} src={logo} alt="logo" />
+                </Link>
                 <div className={styles["navbar-left"]}>
                     <ul>
                         <li><Link href="/">All</Link></li>
@@ -45,7 +48,7 @@ const Header = () => {
                             className={styles["navbar-icon-cart"]} 
                             onClick={handleCartToggle}
                         >
-                            <Image src={shopping_cart} alt="shopping cart" />
+                            <Image as={'image'} priority={true} src={shopping_cart} alt="shopping cart" />
                             {state.cart.length > 0 ? <span>{state.cart.length}</span>: null}
                         </li>
                     </ul>
@@ -57,7 +60,9 @@ const Header = () => {
             {//Aparece fondo negro detrás que al darle click va a cerrar todos los menús abiertos
             (toggleOrders || toggle) && <div onClick={()=>{if(toggleOrders || toggle){ setToggle(false); setToggleOrders(false);};}} className='background-black'></div>
             }
-        </header>
+        </header>        
+        </>
+
     );
 };
 
