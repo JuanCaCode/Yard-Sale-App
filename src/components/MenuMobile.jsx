@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '@styles/components/MenuMobile.scss';
+import styles from '@styles/components/MenuMobile.module.scss';
 
 const MenuMobile = () => {
     return (
@@ -19,7 +19,7 @@ const MenuMobile = () => {
                     <li><Link href="">My orders</Link></li>
                     <li><Link href="">My account</Link></li>
                 </ul>
-                <ul className={styles["menu_list_mobile last_i_menu"]}>
+                <ul className={`${styles["menu_list_mobile"]} ${styles["last_i_menu"]}`}>
                     <li><Link href="">camilo@example.com</Link></li>
                     <li><Link href="">Sign out</Link></li>
                 </ul>

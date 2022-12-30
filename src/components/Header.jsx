@@ -2,8 +2,9 @@
 import React , {useState,useContext} from 'react';
 import Image from 'next/image';
 import AppContext from '@context/AppContext';
-import MenuDesktop from '@components/MenuDesktop';
 import ShoppingCart from '@containers/ShoppingCart';
+import MenuDesktop from '@components/MenuDesktop';
+import MenuMobile from '@components/MenuMobile'
 //imagenes
 import logo from '@logos/logo_yard_sale.svg';
 import icon_menu from '@icons/icon_menu.svg';
@@ -15,6 +16,7 @@ const Header = () => {
     const {state} = useContext(AppContext);
     const [toggle,setToggle] = useState(false);
     const [toggleOrders, setToggleOrders] = useState(false);
+    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
 
     const handleToggle = () =>{
         setToggle(!toggle);//!toggle cambiará el estado de true a false y de false a true.
@@ -22,12 +24,20 @@ const Header = () => {
     const handleCartToggle = () =>{
         setToggleOrders(!toggleOrders);
     };
-
+    const handleToggleMobileMenu = () =>{
+        setToggleMobileMenu(!toggleMobileMenu);
+    }
     return (
         <>
         <header>
             <nav className={styles.nav}>
-                <Image as={'image'} priority={true} className={styles["menu-mobile-img"]} src={icon_menu} alt="icono de menu mobile" />
+                <Image
+                    onClick={handleToggleMobileMenu}
+                    priority={true}
+                    className={styles["menu-mobile-img"]}
+                    src={icon_menu}
+                    alt="icono de menu mobile"
+                />
                 <Link href="/">
                     <Image as={'image'} priority={true} className={styles.logo} src={logo} alt="logo" />
                 </Link>
@@ -44,10 +54,7 @@ const Header = () => {
                 <div className={styles["navbar-right"]}>
                     <ul >
                         <li onClick={handleToggle}>camilo@example.com</li>
-                        <li 
-                            className={styles["navbar-icon-cart"]} 
-                            onClick={handleCartToggle}
-                        >
+                        <li className={styles["navbar-icon-cart"]} onClick={handleCartToggle}>
                             <Image as={'image'} priority={true} src={shopping_cart} alt="shopping cart" />
                             {state.cart.length > 0 ? <span>{state.cart.length}</span>: null}
                         </li>
@@ -55,6 +62,7 @@ const Header = () => {
                 </div>
                 {toggle && <MenuDesktop onMouseOut={handleToggle} />}
                 {toggleOrders && <ShoppingCart handleCartToggle={handleCartToggle} />}
+                {toggleMobileMenu && <MenuMobile />}
             </nav>
             
             {//Aparece fondo negro detrás que al darle click va a cerrar todos los menús abiertos
