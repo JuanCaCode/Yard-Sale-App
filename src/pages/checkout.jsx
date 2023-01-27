@@ -24,7 +24,6 @@ const Checkout = () => {
           </div>
           {
             state.cart.map((product)=> {
-              console.log(product);
               return(
               <OrderItemCheckout product={product} key={product.id} />
               )
