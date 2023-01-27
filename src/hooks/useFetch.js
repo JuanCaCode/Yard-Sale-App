@@ -17,6 +17,7 @@ const useFetch = (endPoint) => {
             console.error(error);
             console.groupEnd('Fetch Data Errors Close')
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [endPoint]);
     return {
         data,

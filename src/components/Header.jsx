@@ -13,18 +13,26 @@ import styles from '@styles/components/Header.module.scss';
 import Link from 'next/link';
 
 const Header = () => {
-    const {state} = useContext(AppContext);
+    const {state, setCategoryFilter} = useContext(AppContext);
 
+    const handleCategory = (id)=>{
+            setCategoryFilter(id)
+    }
+
+    //TOGGLE PARA MENÚ DE SESIÓN
     const [toggle,setToggle] = useState(false);
-    const [toggleOrders, setToggleOrders] = useState(false);
-    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-
     const handleToggle = () =>{
         setToggle(!toggle);//!toggle cambiará el estado de true a false y de false a true.
     };
+
+    //TOGGLE PARA EL MENÚ DE CARRITO DE COMPRAS
+    const [toggleOrders, setToggleOrders] = useState(false);
     const handleCartToggle = () =>{
         setToggleOrders(!toggleOrders);
     };
+
+    //TOGGLE PARA EL MENU MOBILE
+    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
     const handleToggleMobileMenu = () =>{
         setToggleMobileMenu(!toggleMobileMenu);
     }
@@ -44,12 +52,12 @@ const Header = () => {
                 </Link>
                 <div className={styles["navbar-left"]}>
                     <ul>
-                        <li><Link href="/">All</Link></li>
-                        <li><Link href="/">Clothes</Link></li>
-                        <li><Link href="/">Electronics</Link></li>
-                        <li><Link href="/">Furnitures</Link></li>
-                        <li><Link href="/">Toys</Link></li>
-                        <li><Link href="/">Otros</Link></li>
+                        <li><Link href="/" onClick={()=>handleCategory("all")}>All</Link></li>
+                        <li><Link href="/" onClick={()=>handleCategory(1)}>Clothes</Link></li>
+                        <li><Link href="/" onClick={()=>handleCategory(2)}>Electronics</Link></li>
+                        <li><Link href="/" onClick={()=>handleCategory(3)}>Furnitures</Link></li>
+                        <li><Link href="/" onClick={()=>handleCategory(4)}>Toys</Link></li>
+                        <li><Link href="/" onClick={()=>handleCategory(5)}>Otros</Link></li>
                     </ul>
                 </div>
                 <div className={styles["navbar-right"]}>

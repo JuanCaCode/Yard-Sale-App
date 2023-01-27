@@ -12,6 +12,17 @@
     grid-template-columns: repeat(auto-fill,240px);/*autofill, amplia el ancho segun la cantidad de elementos  */
     gap: 2rem;
 }
+.no-products-found{
+    width: 100%;
+    color: $very-light-pink;
+    display: flex;
+    justify-content: center;
+}
+// .no-products-found>h2{
+//     width: 100%;
+//     color: $very-light-pink;
+//     text-align: center;
+// }
 
 @media (max-width:640px){
     /* MAIN CONTAINER PRODUCT */

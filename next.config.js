@@ -10,7 +10,8 @@ const nextConfig = {
       "cdn.pimylifeup.com",
       "source.unsplash.com",
       "m.media-amazon.com",
-      "images.tcdn.com.br"
+      "images.tcdn.com.br",
+      "cdn.myanimelist.net"
     ],
   },
 }

@@ -4,12 +4,14 @@ const initialState = {
   //Se instancia el objeto donde se van a guardar los productos del carrito de compras
   cart: [],
   currentProduct: {},
+  
 };
 
 //Se crea la función controladora de eventos para el Shopping Cart
 const useInitialState = () => {
   const [state, setState] = useState(initialState); //Se instancia un useState con el modelo de initialState
-
+  const [ categoryFilter, setCategoryFilter ] = useState(0);
+  
   const addToCart = (payload) => {
     // Función para agregar productos al carrito de compras
     setState({
@@ -39,6 +41,8 @@ const useInitialState = () => {
     addToCart,
     removeFromCart,
     addToDetail,
+    categoryFilter,
+    setCategoryFilter
   };
 };
 
