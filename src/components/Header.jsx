@@ -14,6 +14,7 @@ import Link from 'next/link';
 
 const Header = () => {
     const {state} = useContext(AppContext);
+
     const [toggle,setToggle] = useState(false);
     const [toggleOrders, setToggleOrders] = useState(false);
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);

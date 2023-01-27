@@ -1,18 +1,21 @@
 import React , {useState} from 'react';
 import ProductItem from '@components/ProductItem';
 import ProductDetail from '@containers/ProductDetail';
-import useGetProducts from '@hooks/useGetProducts';
 import styles from '@styles/containers/ProductsGrid.module.scss';
-
-const API = 'https://api.escuelajs.co/api/v1/products'; //Por el momento recibimos la API de esta forma (NO ADECUADA)
+import useFetch from '@hooks/useFetch';
+import endPoints from 'services/api';
 
 const ProductsGrid = () => {
-    
-    const products =  useGetProducts(API);//guardamos los productos de la API
-    const [detailToggle, setDetailToggle] = useState(false);//Creamos la variable detailToggle para abrir el modal de ProductDatail
-    const handleDetailToggle = (action)=>{//Esta es la función que se crea para abrir y cerrar el modal de ProductDatail
+    const {data:products} = useFetch(endPoints.products.getAllProducts);
+
+    //ProductDetailToggle
+    const [detailToggle, setDetailToggle] = useState(false);
+
+    //Esta es la función que se crea para abrir y cerrar el modal de ProductDatail  
+    const handleDetailToggle = (action)=>{
         action === 'open'? setDetailToggle(true): setDetailToggle(false)
     };
+
     return (
         <section className={styles["main-container"]}>
             <div className={styles["cards-container"]}>

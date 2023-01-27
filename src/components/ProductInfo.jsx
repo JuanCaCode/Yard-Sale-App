@@ -5,8 +5,8 @@ import styles from '@styles/containers/ProductDetail.module.scss';
 import Image from 'next/image';
 
 const ProductInfo = () => {
-    const {state, addToCart,} = useContext(AppContext)
-    const pro=state.currentProduct;
+    const {state, addToCart} = useContext(AppContext)
+    const pro= state.currentProduct;
     return (
         <>
             <figure className={styles["figure-product-image"]}>
