@@ -1,12 +1,15 @@
 @import '@styles/vars';
 .main-container{
     margin-top: 80px;
+    padding:0 10%;
+    .category-name{
+        font-size: 3rem;
+    }
 }
 .cards-container{
     box-sizing: border-box;
     width: 100%;
     margin-top: 20px;
-    padding:0 10% 0 10%;
     display: grid;
     place-content: center;
     grid-template-columns: repeat(auto-fill,240px);/*autofill, amplia el ancho segun la cantidad de elementos  */
@@ -24,8 +27,27 @@
 //     text-align: center;
 // }
 
+@media (max-width:1200px){
+    /* MAIN CONTAINER PRODUCT */
+    .main-container{
+        margin-top: 80px;
+        padding:0 5%;
+        .category-name{
+            font-size: 2rem;
+            padding-left: 2rem;
+        }
+    }
+}
 @media (max-width:640px){
     /* MAIN CONTAINER PRODUCT */
+    .main-container{
+        margin-top: 80px;
+        padding:0 1%;
+        .category-name{
+            font-size: 2rem;
+            padding-left: 2rem;
+        }
+    }
     .cards-container{
         grid-template-columns: repeat(auto-fill,140px);
         padding:0;

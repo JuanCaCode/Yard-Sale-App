@@ -13,6 +13,7 @@ const ProductsGrid = () => {
 
     //HANDLE CATEGORY FILTER
     const { categoryFilter } = useContext(AppContext);
+    const [categoryName, setCategoryName]= useState("All Products")
     const [noFoundProducts, setnoFoundProducts] = useState(false);
     const FetchByCategory = async (id) => {
         await setAPI(endPoints.categories.getCategoriesProduct(id));
@@ -33,24 +34,30 @@ const ProductsGrid = () => {
         switch (categoryFilter) {
             case 'all':
                 FetchAllProducts();
+                setCategoryName("All Products")
                 break;
             case 1:
                 FetchByCategory(1);
+                setCategoryName("Clothes")
                 break;
             case 2:
                 FetchByCategory(2);
+                setCategoryName("Electronics")
                 break;
             case 3:
                 FetchByCategory(3);
+                setCategoryName("Furniture")
                 break;
             case 4:
                 FetchByCategory(4);
+                setCategoryName("Shoes")
                 break;
             case 5:
                 FetchByCategory(5);
+                setCategoryName("Others")
                 break;
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [products, categoryFilter, listaProducts]);
 
     //ProductDetailToggle
@@ -63,14 +70,14 @@ const ProductsGrid = () => {
 
     return (
         <section className={styles['main-container']}>
+            <h2 className={styles['category-name']}>{categoryName}</h2>
             <div className={styles['cards-container']}>
                 {listaProducts.map((product) => {
-                    //Se mapea todos los productos uno a uno y por cada uno se crea un componente de Product Item
                     return (
                         <ProductItem
-                            handleDetailToggle={handleDetailToggle} //Envía la función para desplegar el modal de product detail
-                            product={product} // envía el objeto del producto en especifico
-                            key={product.id} //envía el id del producto en especifico
+                            handleDetailToggle={handleDetailToggle}
+                            product={product}
+                            key={product.id}
                         />
                     );
                 })}

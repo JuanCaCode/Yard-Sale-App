@@ -6,20 +6,16 @@ import ShoppingCart from '@containers/ShoppingCart';
 import MenuDesktop from '@components/MenuDesktop';
 import MenuMobile from '@components/MenuMobile'
 //imagenes
-import logo from '@logos/logo_yard_sale.svg';
+import logo from '@logos/logo_yard_sale_white.svg';
 import icon_menu from '@icons/icon_menu.svg';
 import shopping_cart from '@icons/icon_shopping_cart.svg';
 import styles from '@styles/components/Header.module.scss';
 import Link from 'next/link';
 
 const Header = () => {
-    const {state, setCategoryFilter} = useContext(AppContext);
+    const {state} = useContext(AppContext);
 
-    const handleCategory = (id)=>{
-            setCategoryFilter(id)
-    }
-
-    //TOGGLE PARA MENÚ DE SESIÓN
+   //TOGGLE PARA MENÚ DE SESIÓN
     const [toggle,setToggle] = useState(false);
     const handleToggle = () =>{
         setToggle(!toggle);//!toggle cambiará el estado de true a false y de false a true.
@@ -51,14 +47,6 @@ const Header = () => {
                     <Image as={'image'} priority={true} className={styles.logo} src={logo} alt="logo" />
                 </Link>
                 <div className={styles["navbar-left"]}>
-                    <ul>
-                        <li><Link href="/" onClick={()=>handleCategory("all")}>All</Link></li>
-                        <li><Link href="/" onClick={()=>handleCategory(1)}>Clothes</Link></li>
-                        <li><Link href="/" onClick={()=>handleCategory(2)}>Electronics</Link></li>
-                        <li><Link href="/" onClick={()=>handleCategory(3)}>Furnitures</Link></li>
-                        <li><Link href="/" onClick={()=>handleCategory(4)}>Toys</Link></li>
-                        <li><Link href="/" onClick={()=>handleCategory(5)}>Otros</Link></li>
-                    </ul>
                 </div>
                 <div className={styles["navbar-right"]}>
                     <ul >
