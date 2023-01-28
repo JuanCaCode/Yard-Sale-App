@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Yard Sale Con Next.js</title>
+        <title>Yard Sale Store</title>
       </Head>
       <LandingSection/>
       <ProductsGrid />
