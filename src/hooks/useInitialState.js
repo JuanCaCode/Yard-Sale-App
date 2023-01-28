@@ -48,7 +48,9 @@ const useInitialState = () => {
   //ACTUALIZA EL STATE CADA QUE SE RECARGA LA PAGINA
   useEffect(()=>{
     const storage = JSON.parse(localStorage.getItem('stateStoraged'));
-    setState(storage);
+    if(storage){
+      setState(storage);
+    }
   },[])
 
   return {

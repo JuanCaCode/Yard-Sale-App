@@ -23,7 +23,7 @@ const Checkout = () => {
             <p>$560.00</p>
           </div>
           {
-            state.cart.map((product)=> {
+            state.cart?.map((product)=> {
               return(
               <OrderItemCheckout product={product} key={product.id} />
               )
