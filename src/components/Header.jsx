@@ -13,7 +13,7 @@ import styles from '@styles/components/Header.module.scss';
 import Link from 'next/link';
 
 const Header = () => {
-    const {state} = useContext(AppContext);
+    const {state, toggleMobileMenu, setToggleMobileMenu} = useContext(AppContext);
 
    //TOGGLE PARA MENÚ DE SESIÓN
     const [toggle,setToggle] = useState(false);
@@ -28,9 +28,9 @@ const Header = () => {
     };
 
     //TOGGLE PARA EL MENU MOBILE
-    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
     const handleToggleMobileMenu = () =>{
         setToggleMobileMenu(!toggleMobileMenu);
+        setToggleOrders(false)
     }
     return (
         <>

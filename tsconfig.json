@@ -17,6 +17,7 @@
     "baseUrl" : "src",
     "paths": {
         "@templates/*":["templates/*"],
+        "@layouts/*":["layouts/*"],
         "@images/*":["assets/images/*"],
         "@icons/*":["assets/icons/*"],
         "@logos/*":["assets/logos/*"],
@@ -27,6 +28,6 @@
         "@styles/*":["styles/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.tsx", "src/components/Header.tsx", "src/pages/checkout.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.tsx", "src/components/Header.tsx", "src/pages/checkout.jsx", "src/pages/app/index.jsx", "src/pages/create-account.jsx"],
   "exclude": ["node_modules"], 
 }

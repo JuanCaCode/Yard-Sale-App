@@ -26,6 +26,7 @@ const LandingSection = () => {
                 <button className={`animate__animated animate__zoomInLeft animate ${categoryFilter == 4? styles["active-category"]:null}`} onClick={()=>handleCategory(4)}>Shoes</button>
                 <button className={`animate__animated animate__zoomInLeft animate ${categoryFilter == 5? styles["active-category"]:null}`} onClick={()=>handleCategory(5)}>Others</button>
             </section>
+            <span id="anchor-categories-menu"></span>
         </section>
     ); 
 };

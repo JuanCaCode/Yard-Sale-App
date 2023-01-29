@@ -1,0 +1,21 @@
+.error-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 10%;
+    box-sizing: border-box;
+    img{
+        width: 100%;
+    }
+    h3{
+        text-align: center;
+    }
+}
+@media (max-width:450px){
+    .error-container{
+        padding: 50px 10%;
+    }
+}
