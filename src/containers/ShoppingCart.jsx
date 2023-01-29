@@ -14,6 +14,8 @@ const ShoppingCart = (props) => {
         const sum = state.cart.reduce(reducer,0);
         return sum
     }
+
+
     return (
         <aside className={styles["shopping-cart-container"]}>
             <div onClick={props.handleCartToggle}  className={styles["title-container-shopping-cart"]}>
@@ -34,7 +36,7 @@ const ShoppingCart = (props) => {
                 <p>Total</p>
                 <p>${sumTotal()}</p>
             </div>
-            <Link href="/checkout">
+            <Link href="/checkout" onClick={props.handleCartToggle}>
                 <button disabled={state.cart.length == 0? true:false} className="primary_btn">
                     <span>Checkout</span>
                 </button>

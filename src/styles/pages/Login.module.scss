@@ -5,6 +5,7 @@
     height: 100vh;
     display: grid;
     place-items: center;
+    box-sizing: border-box;
 }
 .login_form-container{
     width: 300px;
@@ -15,7 +16,7 @@
     width: 150px;
     margin-bottom: 48px;
     justify-self: center;
-    display: none;
+    display: block;
 }
 .form_title{
     font-size: $lg;
@@ -64,6 +65,11 @@
 .form_btn{
     margin-top: 14px;
     margin-bottom: 32px;
+}
+.sign_up_btn{
+    width:100%;
+    bottom: 60px;
+    justify-self: center;
 }
 @media (max-width:640px){
     .login_logo{

@@ -1,7 +1,7 @@
 import React from 'react'
 import flechita from '@icons/flechita.svg';
 import Image from 'next/image';
-import styles from '@styles/pages/MisOrdenes.scss';
+import styles from '@styles/pages/MisOrdenes.module.scss';
 
 const OrdenItem = () => {
     return (

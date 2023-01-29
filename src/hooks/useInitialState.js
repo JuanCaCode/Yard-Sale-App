@@ -10,6 +10,7 @@ const initialState = {
 const useInitialState = () => {
   const [state, setState] = useState(initialState); //Se instancia un useState con el modelo de initialState
   const [ categoryFilter, setCategoryFilter ] = useState(0);
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   
   const addToCart = (payload) => {
     // Función para agregar productos al carrito de compras
@@ -59,7 +60,9 @@ const useInitialState = () => {
     removeFromCart,
     addToDetail,
     categoryFilter,
-    setCategoryFilter
+    setCategoryFilter,
+    toggleMobileMenu,
+    setToggleMobileMenu
   };
 };
 
